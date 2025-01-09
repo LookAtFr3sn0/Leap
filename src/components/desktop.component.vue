@@ -35,11 +35,12 @@ function drawSelection() {
   desktop.addEventListener('mouseup', () => {
     desktop.removeChild(selection);
     clearInterval(interval);
-  });
+  }, { once: true });
 }
 </script>
 
 <template>
   <div class="h-full w-full" id="desktop" @mousedown="drawSelection()">
+    
   </div>
 </template>
