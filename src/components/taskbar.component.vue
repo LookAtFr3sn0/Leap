@@ -39,8 +39,9 @@ function dateExpand() {
 <template>
     <div class="w-screen" id="taskbar">
         <div class="flex flex-row h-full justify-end align-middle *:text-white *:rounded-md *:bg-transparent *:text-xs *:my-1 *:justify-center">
-            <div class="flex gap-1 mx-auto hover:*:bg-[#FFFFFF0C] *:rounded-md">
+            <div class="flex gap-1 mx-auto hover:*:bg-[#FFFFFF0C] *:rounded-md" id="icons">
                 <img class="p-2 my-auto h-full" src="../../assets/icons/Windows.svg">
+                <img class="p-2 my-auto h-full" src="../../assets/icons/health_alt.svg">
                 <img class="p-2 my-auto h-full" src="../../assets/icons/Firefox.svg">
                 <img class="p-2 my-auto h-full" src="../../assets/icons/vscode.svg">
             </div>
@@ -75,5 +76,9 @@ function dateExpand() {
   #date {
     font-weight: 600;
     font-size: 9pt;
+  }
+  #icons {
+    margin-left: 50%;
+    transform: translateX(-50%);
   }
 </style>
