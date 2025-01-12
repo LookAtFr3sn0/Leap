@@ -1,5 +1,6 @@
 <script setup>
 import { usePointer } from '@vueuse/core'
+import Welcome from './welcome.component.vue'
 const { x, y } = usePointer()
 
 function drawSelection() {
@@ -13,6 +14,7 @@ function drawSelection() {
   selection.style.position = 'absolute';
   selection.style.left = initialX + 'px';
   selection.style.top = initialY + 'px';
+  selection.style.zIndex = 0;
   selection.style.border = '1px solid rgba(0, 102, 204, 1)';
   selection.style.backgroundColor = 'rgba(0, 120, 215, 0.1)';
   desktop.appendChild(selection);
@@ -31,16 +33,54 @@ function drawSelection() {
       selection.style.top = initialY + 'px';
       selection.style.height = y.value - initialY + 'px';
     }
-  }, 16);
-  desktop.addEventListener('mouseup', () => {
+  }, 12);
+
+  const onMouseUp = () => {
     desktop.removeChild(selection);
     clearInterval(interval);
-  }, { once: true });
+  }
+
+  desktop.addEventListener('mouseup', onMouseUp, { once: true });
 }
 </script>
 
 <template>
-  <div class="h-full w-full" id="desktop" @mousedown="drawSelection()">
-    
+  <div class="w-full gap-x-1" id="desktop" @mousedown.self="drawSelection()">
+    <Welcome class="absolute left-[80%] top-[25%] -translate-x-1/2 -translate-y-1/2 z-10" />
+    <div class="app col-start-2 row-start-3">
+      <img src="/assets/icons/notepad.svg" class="">
+      <span>Bio.txt</span>
+    </div>
+    <div class="app col-start-1 row-start-3">
+      <img src="/assets/icons/notepad.svg" class="">
+      <span>Resume.txt</span>
+    </div>
   </div>
 </template>
+
+<style lang="scss" scoped>
+.app {
+  @apply flex flex-col justify-center text-center w-20 h-24;
+  color: white;
+  text-shadow: 0 0 2px black;
+  border-radius: 4px;
+  &:hover {
+    background-color: #FFFFFF40;
+  }
+  img {
+    @apply mx-auto aspect-square h-14;
+  }
+}
+
+#desktop {
+  width: 100%;
+  height: calc(100% - 48px);
+  display: grid;
+  gap: 0;
+  grid-template-rows: repeat(auto-fill, 120px 120px);
+  grid-template-columns: repeat(auto-fill, 86px 86px);
+  background-image: url('/assets/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+</style>
