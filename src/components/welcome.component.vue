@@ -47,8 +47,8 @@ var welcomeShow = true;
         <div id="welcomeBar" class="absolute w-full h-6 top-0 left-0 cursor-grab" @mousedown="dragWelcome()">
             <span class="material-symbols-outlined text-base absolute right-0 w-6 cursor-pointer font-light" @click="closeWelcome()">close</span>
         </div>
-        <span class="text-4xl marker">Hi!</span>
-        <span class="mt-8">I'm a CS&nbsp;student and software/full&nbsp;stack developer</span>
+        <span class="text-5xl marker">Hi!</span>
+        <span class="mt-6 marker text-xl">I'm a CS&nbsp;student and software/full&nbsp;stack developer</span>
         <div class="flex mt-auto mx-4 gap-4 *:aspect-square *:h-6 self-center">
             <a href="https://github.com/LookAtFr3sn0" target="_blank"><img src="/assets/icons/github.svg" alt="GitHub" /></a>
             <a href="https://github.com/LookAtFr3sn0" target="_blank"><span class="material-symbols-outlined">code</span></a>
