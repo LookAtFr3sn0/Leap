@@ -38,8 +38,7 @@ function dragWelcome() {
         bar.style.cursor = 'grab';
     }, { once: true });
 }
-// var welcomeShow = document.cookie.indexOf('welcome') === -1;
-var welcomeShow = true;
+var welcomeShow = document.cookie.indexOf('welcome') === -1;
 </script>
 
 <template>
