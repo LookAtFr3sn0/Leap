@@ -59,19 +59,6 @@ function drawSelection() {
 </template>
 
 <style lang="scss" scoped>
-.app {
-  @apply flex flex-col justify-center text-center w-20 h-24;
-  color: white;
-  text-shadow: 0 0 2px black;
-  border-radius: 4px;
-  &:hover {
-    background-color: #FFFFFF40;
-  }
-  img {
-    @apply mx-auto aspect-square h-14;
-  }
-}
-
 #desktop {
   width: 100%;
   height: calc(100% - 48px);

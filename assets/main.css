@@ -16,6 +16,23 @@
     }
 }
 
+@layer components {
+    .app {
+        @apply flex flex-col justify-center text-center w-20 h-24;
+        color: white;
+        text-shadow: 0 0 2px black;
+        border-radius: 4px;
+    }
+    
+    .app img {
+        @apply mx-auto aspect-square h-14;
+    }
+
+    .app-selected {
+        background-color: #FFFFFF40;
+    }
+}
+
 @layer utilities {
     .marker {
         font-family: 'Permanent Marker';
