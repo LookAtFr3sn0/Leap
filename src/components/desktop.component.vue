@@ -33,6 +33,16 @@ function drawSelection() {
       selection.style.top = initialY + 'px';
       selection.style.height = y.value - initialY + 'px';
     }
+    const apps = document.getElementsByClassName('app');
+    for (const app of apps) {
+      const appRect = app.getBoundingClientRect();
+      const selectionRect = selection.getBoundingClientRect();
+      if (appRect.left < selectionRect.right && appRect.right > selectionRect.left && appRect.top < selectionRect.bottom && appRect.bottom > selectionRect.top) {
+        app.classList.add('app-selected');
+      } else {
+        app.classList.remove('app-selected');
+      }
+    };
   }, 12);
 
   const onMouseUp = () => {
@@ -47,13 +57,17 @@ function drawSelection() {
 <template>
   <div class="w-full gap-x-1" id="desktop" @mousedown.self="drawSelection()">
     <Welcome class="absolute left-[80%] top-[25%] -translate-x-1/2 -translate-y-1/2 z-10" />
-    <div class="app col-start-2 row-start-3">
+    <div class="app col-start-2 row-start-4 hover:app-selected">
       <img src="/assets/icons/notepad.svg" class="">
-      <span>Bio.txt</span>
+      <span>Bio</span>
     </div>
-    <div class="app col-start-1 row-start-3">
+    <div class="app col-start-1 row-start-3 hover:app-selected">
       <img src="/assets/icons/notepad.svg" class="">
-      <span>Resume.txt</span>
+      <span>Resume</span>
+    </div>
+    <div class="app col-start-3 row-start-4 hover:app-selected">
+      <img src="/assets/icons/notepad.svg" class="">
+      <span>Hobbies</span>
     </div>
   </div>
 </template>
