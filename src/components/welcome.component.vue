@@ -51,8 +51,8 @@ var welcomeShow = true;
         <span class="mt-6 marker text-xl">I'm a CS&nbsp;student and software/full&nbsp;stack developer</span>
         <div class="flex mt-auto mx-4 gap-4 *:aspect-square *:h-6 self-center">
             <a href="https://github.com/LookAtFr3sn0" target="_blank"><img src="/assets/icons/github.svg" alt="GitHub" /></a>
-            <a href="https://github.com/LookAtFr3sn0" target="_blank"><span class="material-symbols-outlined">code</span></a>
-            <a href="" target="_blank"><img src="/assets/icons/LinkedIn.svg" alt="LinkedIn" /></a>
+            <a href="https://github.com/LookAtFr3sn0/Leap" target="_blank"><span class="material-symbols-outlined">code</span></a>
+            <a href="https://www.linkedin.com/in/francescogiammari/" target="_blank"><img src="/assets/icons/LinkedIn.svg" alt="LinkedIn" /></a>
         </div>
     </div>
 </template>
