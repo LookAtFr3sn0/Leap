@@ -1,7 +1,11 @@
 <script setup>
+import { ref } from 'vue'
 import { usePointer } from '@vueuse/core'
 import Welcome from './welcome.component.vue'
 const { x, y } = usePointer()
+import AppWindow from './appWindow.component.vue'
+
+const AppOpened = ref('');
 
 function drawSelection() {
   const desktop = document.getElementById('desktop');
@@ -67,12 +71,29 @@ function appSelect(event) {
   }
   app.classList.add('app-selected');
 }
+
+function appOpen(event) {
+  const selected = document.getElementsByClassName('app-selected');
+  for (const app of selected) {
+    app.classList.remove('app-selected');
+  }
+  const desktop = document.getElementById('desktop');
+  var app;
+  if (event.target.classList.contains('app')) {
+    app = event.target.id;
+  }
+  else {
+    app = event.target.parentElement.id;
+  }
+  AppOpened.value = app;
+}
 </script>
 
 <template>
   <div class="w-full gap-x-1" id="desktop" @mousedown.self="drawSelection()">
     <Welcome class="absolute left-[80%] top-[25%] -translate-x-1/2 -translate-y-1/2 z-10" />
-    <div class="app row-start-1 col-start-2 hover:app-selected" @click="appSelect">
+    <AppWindow v-if="AppOpened" :app="AppOpened" class="absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-10" />
+    <div class="app row-start-1 col-start-2 hover:app-selected" id="bio" @click="appSelect" @dblclick="appOpen">
       <img src="/assets/icons/notepad.svg" class="">
       <span>Bio</span>
     </div>
