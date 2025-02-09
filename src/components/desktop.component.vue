@@ -107,7 +107,7 @@ function appOpen(event) {
   gap: 0;
   grid-template-rows: repeat(auto-fill, 120px 120px);
   grid-template-columns: repeat(auto-fill, 86px 86px);
-  background-image: url('/assets/background.jpg');
+  background-image: url('/assets/background.avif');
   background-size: cover;
   background-repeat: no-repeat;
 }
