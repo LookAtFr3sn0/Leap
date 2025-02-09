@@ -52,22 +52,29 @@ function drawSelection() {
 
   desktop.addEventListener('mouseup', onMouseUp, { once: true });
 }
+
+function appSelect(event) {
+  const selected = document.getElementsByClassName('app-selected');
+  for (const app of selected) {
+    app.classList.remove('app-selected');
+  }
+  var app
+  if (event.target.classList.contains('app')) {
+    app = event.target;
+  }
+  else {
+    app = event.target.parentElement;
+  }
+  app.classList.add('app-selected');
+}
 </script>
 
 <template>
   <div class="w-full gap-x-1" id="desktop" @mousedown.self="drawSelection()">
     <Welcome class="absolute left-[80%] top-[25%] -translate-x-1/2 -translate-y-1/2 z-10" />
-    <div class="app col-start-2 row-start-4 hover:app-selected">
+    <div class="app row-start-1 col-start-2 hover:app-selected" @click="appSelect">
       <img src="/assets/icons/notepad.svg" class="">
       <span>Bio</span>
-    </div>
-    <div class="app col-start-1 row-start-3 hover:app-selected">
-      <img src="/assets/icons/notepad.svg" class="">
-      <span>Resume</span>
-    </div>
-    <div class="app col-start-3 row-start-4 hover:app-selected">
-      <img src="/assets/icons/notepad.svg" class="">
-      <span>Hobbies</span>
     </div>
   </div>
 </template>
