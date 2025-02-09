@@ -50,9 +50,9 @@ function dateExpand() {
     <div class="w-screen" id="taskbar">
         <div class="flex flex-row h-full justify-end align-middle *:text-white *:rounded-md *:bg-transparent *:text-xs *:my-1 *:justify-center">
             <div class="flex gap-1 mx-auto hover:*:bg-[#FFFFFF0C] *:rounded-md" id="icons">
-                <img class="p-2 my-auto h-full" src="/assets/icons/Windows.svg">
-                <img class="p-2 my-auto h-full" src="/assets/icons/Firefox.svg">
-                <img class="p-2 my-auto h-full" src="/assets/icons/vscode.svg">
+                <img class="p-2 my-auto h-full" src="/assets/icons/Windows.svg" alt="Start menu">
+                <img class="p-2 my-auto h-full" src="/assets/icons/Firefox.svg" alt="Firefox">
+                <img class="p-2 my-auto h-full" src="/assets/icons/vscode.svg" alt="vscode">
             </div>
             <div class="flex px-1 hover:bg-[#FFFFFF0C]">
                 <span class="material-symbols-outlined my-auto">keyboard_arrow_up</span>
