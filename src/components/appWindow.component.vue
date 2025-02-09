@@ -35,7 +35,7 @@ function dragApp() {
     document.addEventListener('mousemove', onMouseMove);
     document.addEventListener('mouseup', () => {
         document.removeEventListener('mousemove', onMouseMove);
-        appBar.style.cursor = 'grab';
+        appBar.style.cursor = 'default';
     }, { once: true });
 }
 </script>
