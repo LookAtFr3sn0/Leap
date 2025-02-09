@@ -18,8 +18,8 @@ function dragWelcome() {
         welcome.style.left = offsetX + x.value + 'px';
         welcome.style.top = offsetY + y.value + 'px';
         // keep the welcome window in the viewport
-        if (welcome.offsetLeft < welcome.offsetHeight/2) {
-            welcome.style.left = welcome.offsetHeight/2 + 'px';
+        if (welcome.offsetLeft < welcome.offsetWidth/2) {
+            welcome.style.left = welcome.offsetWidth/2 + 'px';
         }
         if (welcome.offsetTop < welcome.offsetHeight/2) {
             welcome.style.top = welcome.offsetHeight/2 + 'px';
