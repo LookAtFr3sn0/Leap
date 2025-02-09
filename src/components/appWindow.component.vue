@@ -19,6 +19,7 @@ function dragApp() {
     const onMouseMove = () => {
         appWindow.style.left = offsetX + x.value + 'px';
         appWindow.style.top = offsetY + y.value + 'px';
+        
         // keep the app window in the viewport
         if (appWindow.offsetLeft < appWindow.offsetWidth/2) {
             appWindow.style.left = appWindow.offsetWidth/2 + 'px';
