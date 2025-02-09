@@ -5,7 +5,8 @@ const props = defineProps(['app']);
 const appName = props.app.charAt(0).toUpperCase() + props.app.slice(1)
 
 function closeApp() {
-    document.getElementById('appWindow').parentElement.removeChild(document.getElementById('appWindow'));
+    const appWindow = document.getElementById('appWindow');
+    appWindow.parentElement.removeChild(appWindow);
 }
 
 function dragApp() {
