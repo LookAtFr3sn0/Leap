@@ -19,7 +19,7 @@ function dragApp() {
     const onMouseMove = () => {
         appWindow.style.left = offsetX + x.value + 'px';
         appWindow.style.top = offsetY + y.value + 'px';
-        
+
         // keep the app window in the viewport
         if (appWindow.offsetLeft < appWindow.offsetWidth/2) {
             appWindow.style.left = appWindow.offsetWidth/2 + 'px';
@@ -46,7 +46,7 @@ function dragApp() {
     <div id="appWindow" class="bg-white">
         <div id="appBar" class="w-full flex justify-between" @mousedown="dragApp()">
             <div class="px-2 py-0.5">{{ appName }}</div>
-            <div class="flex *:cursor-pointer text-center *:aspect-square h-full absolute right-0">
+            <div class="flex *:cursor-pointer text-center *:aspect-square h-8 absolute right-0">
                 <span class="material-symbols-outlined text-lg hover:bg-gray-200" @click="">minimize</span>
                 <span class="material-symbols-outlined text-lg hover:bg-gray-200" @click="">crop_square</span>
                 <span class="material-symbols-outlined text-lg hover:bg-red-600" @click="closeApp()">close</span>
