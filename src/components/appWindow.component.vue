@@ -4,6 +4,10 @@ const { x, y } = usePointer();
 const props = defineProps(['app']);
 const appName = props.app.charAt(0).toUpperCase() + props.app.slice(1)
 
+function closeApp() {
+    document.getElementById('appWindow').parentElement.removeChild(document.getElementById('appWindow'));
+}
+
 function dragApp() {
     const appWindow = document.getElementById('appWindow');
     const appBar = document.getElementById('appBar');
