@@ -1,6 +1,16 @@
 <script setup>
 const weekday = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+var isBatterySupported = 'getBattery' in navigator;
+var batteryLevel;
+if (isBatterySupported) {
+  navigator.getBattery().then(battery => {
+    batteryLevel = battery.level * 100;
+    battery.addEventListener('levelchange', () => {
+      batteryLevel = battery.level * 100;
+    });
+  });
+}
 
 const clock = () => {
   const date = new Date()
@@ -50,6 +60,11 @@ function dateExpand() {
             <div class="flex *:text-[16px] *:my-auto px-2 gap-[8px] hover:bg-[#FFFFFF0C]">
                 <span class="material-symbols-outlined">wifi</span>
                 <span class="material-symbols-outlined">volume_up</span>
+                <span class="material-symbols-outlined" v-if="batteryLevel && batteryLevel < 100 && batteryLevel >= 80">battery_full_alt</span>
+                <span class="material-symbols-outlined" v-else-if="batteryLevel && batteryLevel < 80 && batteryLevel >= 60">battery_horiz_075</span>
+                <span class="material-symbols-outlined" v-else-if="batteryLevel && batteryLevel < 60 && batteryLevel >= 30">battery_horiz_050</span>
+                <span class="material-symbols-outlined" v-else-if="batteryLevel && batteryLevel < 30 && batteryLevel >= 10">battery_low</span>
+                <span class="material-symbols-outlined" v-else-if="batteryLevel && batteryLevel < 30 && batteryLevel >= 10">battery_horiz_000</span>
             </div>
             <div class="mr-3 flex flex-col text-end min-w-max px-2 hover:bg-[#FFFFFF0C]" id="date" @mouseenter="dateExpand()">
                 <span>{{ (new Date()).toLocaleTimeString([], {hour: 'numeric', minute: '2-digit'}) }}</span>
