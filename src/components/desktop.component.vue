@@ -93,7 +93,7 @@ function appOpen(event) {
     <Welcome class="absolute left-[80%] top-[25%] -translate-x-1/2 -translate-y-1/2 z-10" />
     <AppWindow v-if="AppOpened" :app="AppOpened" class="absolute left-[50%] w-8/12 h-5/6 top-[50%] -translate-x-1/2 -translate-y-1/2 z-10" />
     <div class="app row-start-1 col-start-2 hover:app-selected" id="bio" @click="appSelect" @dblclick="appOpen">
-      <img src="/assets/icons/notepad.svg" class="">
+      <img src="/assets/icons/notepad.svg" alt="notepad">
       <span>Bio</span>
     </div>
   </div>
