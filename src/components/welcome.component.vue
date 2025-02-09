@@ -17,6 +17,7 @@ function dragWelcome() {
     const onMouseMove = () => {
         welcome.style.left = offsetX + x.value + 'px';
         welcome.style.top = offsetY + y.value + 'px';
+        
         // keep the welcome window in the viewport
         if (welcome.offsetLeft < welcome.offsetWidth/2) {
             welcome.style.left = welcome.offsetWidth/2 + 'px';
