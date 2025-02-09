@@ -41,7 +41,7 @@ function dragApp() {
 </script>
 
 <template>
-    <div id="appWindow" class="bg-white max-w-4xl w-screen">
+    <div id="appWindow" class="bg-white">
         <div id="appBar" class="w-full flex justify-between" @mousedown="dragApp()">
             <div class="px-2 py-0.5">{{ appName }}</div>
             <div class="flex *:cursor-pointer text-center *:aspect-square h-full absolute right-0">
