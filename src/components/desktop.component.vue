@@ -77,7 +77,6 @@ function appOpen(event) {
   for (const app of selected) {
     app.classList.remove('app-selected');
   }
-  const desktop = document.getElementById('desktop');
   var app;
   if (event.target.classList.contains('app')) {
     app = event.target.id;
