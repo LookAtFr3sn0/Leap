@@ -11,6 +11,9 @@ const router = createRouter({
         {
             path: '/projects',
             component: projectsView,
+            meta: {
+                title: 'Projects',
+            }
         }
     ]
 });

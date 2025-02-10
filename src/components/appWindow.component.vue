@@ -1,9 +1,9 @@
 <script setup>
-import { RouterView } from 'vue-router';
+import { RouterView, useRoute } from 'vue-router';
 import { usePointer } from '@vueuse/core';
 const { x, y } = usePointer();
-const props = defineProps(['app']);
-const appName = props.app.charAt(0).toUpperCase() + props.app.slice(1)
+const route = useRoute();
+const appName = route.meta.title;
 
 function closeApp() {
     const appWindow = document.getElementById('appWindow');
