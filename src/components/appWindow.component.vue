@@ -1,4 +1,5 @@
 <script setup>
+import { RouterView } from 'vue-router';
 import { usePointer } from '@vueuse/core';
 const { x, y } = usePointer();
 const props = defineProps(['app']);
@@ -52,5 +53,8 @@ function dragApp() {
                 <span class="material-symbols-outlined text-lg hover:bg-red-600" @click="closeApp()">close</span>
             </div>
         </div>
+        <main>
+            <RouterView />
+        </main>
     </div>
 </template>
