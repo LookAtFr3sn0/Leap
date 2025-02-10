@@ -77,7 +77,7 @@ function appResize() {
                 <span class="material-symbols-outlined text-lg hover:bg-red-600" @click="closeApp()">close</span>
             </div>
         </div>
-        <main class="overflow-auto">
+        <main class="overflow-auto w-full">
             <RouterView />
         </main>
         <div class="bg-[#00000010] absolute h-4 w-full bottom-0 flex">
@@ -85,9 +85,3 @@ function appResize() {
         </div>
     </div>
 </template>
-
-<style scoped>
-main {
-    border-right: 8px solid black;
-}
-</style>
