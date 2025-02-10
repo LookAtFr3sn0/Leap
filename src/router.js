@@ -1,12 +1,16 @@
-import { createRouter, createWebHistory } from "vue-router";
+import { createRouter, createMemoryHistory } from "vue-router";
 import projectsView from "./views/projects.view.vue";
 
 const router = createRouter({
-    history: createWebHistory(),
+    history: createMemoryHistory(),
     routes: [
         {
+            path: '/',
+            redirect: '/projects',
+        },
+        {
             path: '/projects',
-            component: projectsView
+            component: projectsView,
         }
     ]
 });
