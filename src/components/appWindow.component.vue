@@ -53,8 +53,8 @@ function appResize() {
     const onMouseMove = () => {
         let newWidth = startWidth + (x.value - startX) * 2;
         let newHeight = startHeight + (y.value - startY) * 2;
-        if (newWidth < 700) newWidth = 700;
-        if (newHeight < 400) newHeight = 400;
+        if (newWidth < 300) newWidth = 300;
+        if (newHeight < 600) newHeight = 600;
         appWindow.style.width = newWidth + 'px';
         appWindow.style.height = newHeight + 'px';
     };
