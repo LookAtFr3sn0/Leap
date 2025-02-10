@@ -1,14 +1,7 @@
 <script setup>
-import { RouterView, useRoute } from 'vue-router';
+import { RouterView } from 'vue-router';
 import { usePointer } from '@vueuse/core';
 const { x, y } = usePointer();
-const route = useRoute();
-const appName = route.meta.title;
-
-function closeApp() {
-    const appWindow = document.getElementById('appWindow');
-    appWindow.parentElement.removeChild(appWindow);
-}
 
 function dragApp() {
     const appWindow = document.getElementById('appWindow');
@@ -70,11 +63,11 @@ function appResize() {
 <template>
     <div id="appWindow" class="bg-white w-8/12 h-5/6 absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-10">
         <div id="appBar" class="bg-[#00000010] w-full h-8 flex justify-between" @mousedown="dragApp()">
-            <div class="px-2 py-0.5">{{ appName }}</div>
+            <div class="px-2 py-0.5">{{ $route.meta.title }}</div>
             <div class="flex *:cursor-pointer text-center *:aspect-square h-8 absolute right-0">
                 <span class="material-symbols-outlined text-lg hover:bg-gray-200" @click="">minimize</span>
                 <span class="material-symbols-outlined text-lg hover:bg-gray-200" @click="">crop_square</span>
-                <span class="material-symbols-outlined text-lg hover:bg-red-600" @click="closeApp()">close</span>
+                <span class="material-symbols-outlined text-lg hover:bg-red-600" @click="$emit('appClose')">close</span>
             </div>
         </div>
         <main class="overflow-auto w-full">
