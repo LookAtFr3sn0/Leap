@@ -1,10 +1,12 @@
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import { usePointer } from '@vueuse/core'
-import Welcome from './welcome.component.vue'
 const { x, y } = usePointer()
+import Welcome from './welcome.component.vue'
 import AppWindow from './appWindow.component.vue'
 
+const router = useRouter();
 const AppOpened = ref('');
 
 function drawSelection() {
@@ -72,19 +74,13 @@ function appSelect(event) {
   app.classList.add('app-selected');
 }
 
-function appOpen(event) {
+function appOpen(appName) {
   const selected = document.getElementsByClassName('app-selected');
   for (const app of selected) {
     app.classList.remove('app-selected');
   }
-  var app;
-  if (event.target.classList.contains('app')) {
-    app = event.target.id;
-  }
-  else {
-    app = event.target.parentElement.id;
-  }
-  AppOpened.value = app;
+  AppOpened.value = appName;
+  router.push({ name: appName});
 }
 
 </script>
@@ -93,9 +89,13 @@ function appOpen(event) {
   <div class="w-full gap-x-1" id="desktop" @mousedown.self="drawSelection()">
     <Welcome class="absolute left-[80%] top-[25%] -translate-x-1/2 -translate-y-1/2 z-10" />
     <AppWindow v-if="AppOpened" @appClose="AppOpened = ''" id="appWindow"/>
-    <div class="app row-start-1 col-start-2 hover:app-selected" id="bio" @click="appSelect" @dblclick="appOpen">
+    <div class="app row-start-1 col-start-2 hover:app-selected" id="bio" @click="appSelect" @dblclick="appOpen('bio')">
       <img src="/assets/icons/notepad.svg" alt="notepad">
       <span>Bio</span>
+    </div>
+    <div class="app row-start-1 col-start-1 hover:app-selected" id="bio" @click="appSelect" @dblclick="appOpen('projects')">
+      <img src="/assets/icons/notepad.svg" alt="notepad">
+      <span>Projects</span>
     </div>
   </div>
 </template>
