@@ -41,11 +41,35 @@ function dragApp() {
         appBar.style.cursor = 'default';
     }, { once: true });
 }
+
+function appResize() {
+    const appWindow = document.getElementById('appWindow');
+    const appResizeButton = document.getElementById('appResizeButton');
+    const startWidth = appWindow.offsetWidth;
+    const startHeight = appWindow.offsetHeight;
+    const startX = x.value;
+    const startY = y.value;
+
+    const onMouseMove = () => {
+        let newWidth = startWidth + (x.value - startX) * 2;
+        let newHeight = startHeight + (y.value - startY) * 2;
+        if (newWidth < 700) newWidth = 700;
+        if (newHeight < 400) newHeight = 400;
+        appWindow.style.width = newWidth + 'px';
+        appWindow.style.height = newHeight + 'px';
+    };
+
+    document.addEventListener('mousemove', onMouseMove);
+    document.addEventListener('mouseup', () => {
+        document.removeEventListener('mousemove', onMouseMove);
+        appResizeButton.style.cursor = 'default';
+    }, { once: true });
+}
 </script>
 
 <template>
     <div id="appWindow" class="bg-white w-8/12 h-5/6">
-        <div id="appBar" class="w-full flex justify-between" @mousedown="dragApp()">
+        <div id="appBar" class="bg-[#00000010] w-full h-8 flex justify-between" @mousedown="dragApp()">
             <div class="px-2 py-0.5">{{ appName }}</div>
             <div class="flex *:cursor-pointer text-center *:aspect-square h-8 absolute right-0">
                 <span class="material-symbols-outlined text-lg hover:bg-gray-200" @click="">minimize</span>
@@ -53,8 +77,17 @@ function dragApp() {
                 <span class="material-symbols-outlined text-lg hover:bg-red-600" @click="closeApp()">close</span>
             </div>
         </div>
-        <main>
+        <main class="overflow-auto">
             <RouterView />
         </main>
+        <div class="bg-[#00000010] absolute h-4 w-full bottom-0 flex">
+            <span id="appResizeButton" @mousedown="appResize" class="material-symbols-outlined text-base cursor-nwse-resize -rotate-45 ml-auto">filter_list</span>
+        </div>
     </div>
 </template>
+
+<style scoped>
+main {
+    border-right: 8px solid black;
+}
+</style>
