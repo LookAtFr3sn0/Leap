@@ -60,7 +60,7 @@ var welcomeShow = document.cookie.indexOf('welcome') === -1;
 <style scoped>
 #welcome {
     rotate: 6deg;
-    z-index: 99;
+    z-index: 9;
     background-color: #FEFF9C;
     font-family: "Delius";
     mask: linear-gradient( -45deg, transparent 0 calc(32px/sqrt(2)),#fff 0) bottom right;
