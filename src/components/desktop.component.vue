@@ -80,7 +80,7 @@ function appOpen(appName) {
     app.classList.remove('app-selected');
   }
   AppOpened.value = appName;
-  router.push({ name: appName});
+  router.push('/' + appName);
 }
 
 </script>
