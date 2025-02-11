@@ -14,10 +14,10 @@ const project = projects.find(project => project.title === route.params.id)
             <span class="text-sm font-medium">/</span>
             <span class="text-sm font-medium">{{ $route.params.id }}</span>
         </div>
-        <div class="flex py-2 px-4">
-            <div class="w-2/3">
+        <div class="flex py-2 px-4 gap-8">
+            <div class="w-9/12">
             </div>
-            <div class="w-1/3">
+            <div class="w-3/12">
             </div>
         </div>
     </div>
