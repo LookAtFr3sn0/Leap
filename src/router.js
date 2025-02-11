@@ -12,17 +12,15 @@ const router = createRouter({
             component: () => import('./views/projects.view.vue'),
             meta: {
                 title: 'Projects',
-            },
-            children: [
-                {
-                    path: 'leap',
-                    component: () => import('./views/leap.project.view.vue'),
-                    meta: {
-                        title: 'Leap',
-                    }
-                }
-            ]
+            }
         },
+        {
+            path: '/projects/:id',
+            component: () => import('./views/projectDetails.view.vue'),
+            meta: {
+                title: 'Project',
+            }
+        }
     ]
 });
 
