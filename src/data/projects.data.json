@@ -2,30 +2,30 @@
     {
         "title": "Leap",
         "page": "/projects/leap",
-        "description": "Personal website",
+        "summary": "Personal website",
         "link": "https://lookatfr3sn0.com",
         "code": "https://github.com/LookAtFr3sn0/Leap",
         "technologies": ["Vue.js", "TailwindCSS"]
     },
     {
+        "title": "Sunny",
+        "page": "/projects/sunny",
+        "summary": "A simple weather app",
+        "code": "https://github.com/LookAtFr3sn0/Sunny",
+        "technologies": ["Vue.js", "Ionic", "Capacitor"]
+    },
+    {
         "title": "Krypton",
         "page": "/projects/krypton",
-        "description": "Password generator",
+        "summary": "Password generator",
         "code": "https://github.com/LookAtFr3sn0/Krypton",
         "technologies": ["Electron", "Node.js", "Vue.js"]
     },
     {
         "title": "PGen",
         "page": "/projects/pgen",
-        "description": "My first attempt at a password generator",
+        "summary": "My first attempt at a password generator",
         "code": "https://github.com/LookAtFr3sn0/PGen",
         "technologies": ["C#"]
-    },
-    {
-        "title": "Sunny",
-        "page": "/projects/sunny",
-        "description": "A simple weather app",
-        "code": "https://github.com/LookAtFr3sn0/Sunny",
-        "technologies": ["Vue.js", "Ionic", "Capacitor"]
     }
 ]
