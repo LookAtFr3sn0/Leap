@@ -70,7 +70,7 @@ function appResize() {
                 <span class="material-symbols-outlined text-lg hover:bg-red-600" @click="$emit('appClose')">close</span>
             </div>
         </div>
-        <main class="overflow-auto w-full">
+        <main class="overflow-auto w-full h-full mb-12">
             <RouterView />
         </main>
         <div class="bg-[#00000010] absolute h-4 w-full bottom-0 flex">
