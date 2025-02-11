@@ -33,7 +33,7 @@
     }
 
     .link {
-        @apply text-[#4574D0] dark:text-[#497BDE] hover:underline;
+        @apply text-[#4574D0] dark:text-[#497BDE];
     }
 }
 

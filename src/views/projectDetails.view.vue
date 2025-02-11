@@ -10,7 +10,7 @@ const project = projects.find(project => project.title === route.params.id)
 <template>
     <div class="h-full w-full p-2">
         <div class="flex gap-1 *:self-center">
-            <RouterLink to="/projects" class="text-sm font-medium link hover:no-underline">Projects</RouterLink>
+            <RouterLink to="/projects" class="text-sm font-medium link">Projects</RouterLink>
             <span class="text-sm font-medium">/</span>
             <span class="text-sm font-medium">{{ $route.params.id }}</span>
         </div>
