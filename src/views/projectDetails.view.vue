@@ -31,7 +31,7 @@ const project = projects.find(project => project.title === route.params.id)
                     <span class="material-symbols-outlined">code</span>
                     <a :href="'https://' + project.code" class="link">GitHub</a>
                 </div>
-                <hr v-if="project.technologies" class="my-4">
+                <hr v-if="project.technologies" class="my-2">
                 <div class="flex flex-col">
                     <h2 class="font-semibold mb-2">Technologies</h2>
                     <span v-for="i in project.technologies">{{ i }}</span>
