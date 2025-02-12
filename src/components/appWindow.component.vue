@@ -61,7 +61,7 @@ function appResize() {
 </script>
 
 <template>
-    <div id="appWindow" class="bg-white w-8/12 h-5/6 absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-10">
+    <div id="appWindow" class="bg-white dark:bg-[#103030] dark:text-white w-8/12 h-5/6 absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-10">
         <div id="appBar" class="bg-[#00000010] w-full h-8 flex justify-between" @mousedown="dragApp()">
             <div class="px-2 py-0.5">{{ $route.meta.title }}</div>
             <div class="flex *:cursor-pointer text-center *:aspect-square h-8 absolute right-0">
