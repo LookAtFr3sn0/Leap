@@ -5,27 +5,31 @@
         "summary": "Personal website",
         "link": "lookatfr3sn0.com",
         "code": "github.com/LookAtFr3sn0/Leap",
-        "technologies": ["Vue.js", "TailwindCSS"]
+        "technologies": ["Vue.js", "TailwindCSS"],
+        "description": "Leap is the codename for this website. It's a single page app built using Vue.js and styled with TailwindCSS."
     },
     {
         "title": "Sunny",
         "page": "/projects/Sunny",
         "summary": "A simple weather app",
         "code": "github.com/LookAtFr3sn0/Sunny",
-        "technologies": ["Vue.js", "Ionic", "Capacitor"]
+        "technologies": ["Vue.js", "Ionic", "Capacitor"],
+        "description": "This is my attempt at making a simple weather app. I used Pirate Weather's API to get the weather data. The app is built using Vue.js and Ionic with Capacitor to build natively on Android."
     },
     {
         "title": "Krypton",
         "page": "/projects/Krypton",
         "summary": "Password generator",
         "code": "github.com/LookAtFr3sn0/Krypton",
-        "technologies": ["Electron", "Node.js", "Vue.js"]
+        "technologies": ["Electron", "Node.js", "Vue.js"],
+        "description": "Krypton is a password generator build using Electron. It uses Node.js's crypto module to generate cryptographically secure random numbers to generate a password."
     },
     {
         "title": "PGen",
         "page": "/projects/PGen",
         "summary": "My first attempt at a password generator",
         "code": "github.com/LookAtFr3sn0/PGen",
-        "technologies": ["C#"]
+        "technologies": ["C#", ".NET"],
+        "description": "This was my first attempt at a password generator. It's a Windows Forms application that utilizes a cryptographically secure random number generator to generate a secure password from various sets of characters toggleable by the user. Some Unicode characters are also supported."
     }
 ]
