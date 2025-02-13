@@ -8,19 +8,19 @@ const project = projects.find(project => project.title === route.params.id)
 </script>
 
 <template>
-    <div class="h-full w-full p-2">
+    <div class="h-full w-full p-2 @container">
         <div class="flex gap-1 *:self-center">
             <RouterLink to="/projects" class="text-sm font-medium link">Projects</RouterLink>
             <span class="text-sm font-medium">/</span>
             <span class="text-sm font-medium">{{ $route.params.id }}</span>
         </div>
-        <div class="flex py-2 px-4 gap-8">
-            <div class="w-9/12 flex flex-col">
+        <div class="flex py-2 px-4 gap-8 flex-col @xl:flex-row">
+            <div class="@xl:w-9/12 flex flex-col">
                 <h1 class="text-2xl font-bold mb-8">{{ project.title }}</h1>
                 <h2 v-if="project.description" class="font-semibold">About</h2>
                 <span>{{ project.description }}</span>
             </div>
-            <div class="w-3/12 flex flex-col">
+            <div class="@xl:w-3/12 flex flex-col">
                 <h2 class="font-semibold">Info</h2>
                 <span class="text-sm mb-2">{{ project.summary }}</span>
                 <div v-if="project.link" class="flex gap-1">
@@ -31,7 +31,7 @@ const project = projects.find(project => project.title === route.params.id)
                     <span class="material-symbols-outlined">code</span>
                     <a :href="'https://' + project.code" class="link">GitHub</a>
                 </div>
-                <hr v-if="project.technologies" class="my-2">
+                <hr v-if="project.technologies" class="my-2 max-w-48">
                 <div class="flex flex-col">
                     <h2 class="font-semibold mb-2">Technologies</h2>
                     <span v-for="i in project.technologies">{{ i }}</span>
