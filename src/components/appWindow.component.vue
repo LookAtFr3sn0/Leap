@@ -65,8 +65,8 @@ function appResize() {
         <div id="appBar" class="bg-[#00000010] absolute w-full h-8 flex justify-between" @mousedown="dragApp()">
             <div class="px-2 py-0.5">{{ $route.meta.title }}</div>
             <div class="flex *:cursor-pointer text-center *:aspect-square h-8 absolute right-0">
-                <span class="material-symbols-outlined text-lg hover:bg-gray-200" @click="">minimize</span>
-                <span class="material-symbols-outlined text-lg hover:bg-gray-200" @click="">crop_square</span>
+                <span class="material-symbols-outlined text-lg hover:bg-gray-300 hover:dark:bg-opacity-20" @click="">minimize</span>
+                <span class="material-symbols-outlined text-lg hover:bg-gray-300 hover:dark:bg-opacity-20" @click="">crop_square</span>
                 <span class="material-symbols-outlined text-lg hover:bg-red-600" @click="$emit('appClose')">close</span>
             </div>
         </div>
