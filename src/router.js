@@ -11,14 +11,14 @@ const router = createRouter({
             path: '/projects',
             component: () => import('./views/projects.view.vue'),
             meta: {
-                title: 'Projects',
+                title: 'Project viewer',
             }
         },
         {
             path: '/projects/:id',
             component: () => import('./views/projectDetails.view.vue'),
             meta: {
-                title: 'Project',
+                title: 'Project viewer',
             }
         }
     ]
