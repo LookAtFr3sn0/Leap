@@ -62,7 +62,7 @@ function appResize() {
 
 <template>
     <div id="appWindow" class="bg-white dark:bg-[#103030] dark:text-white w-8/12 h-5/6 absolute left-[50%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-10">
-        <div id="appBar" class="bg-[#00000010] w-full h-8 flex justify-between" @mousedown="dragApp()">
+        <div id="appBar" class="bg-[#00000010] absolute w-full h-8 flex justify-between" @mousedown="dragApp()">
             <div class="px-2 py-0.5">{{ $route.meta.title }}</div>
             <div class="flex *:cursor-pointer text-center *:aspect-square h-8 absolute right-0">
                 <span class="material-symbols-outlined text-lg hover:bg-gray-200" @click="">minimize</span>
@@ -70,10 +70,10 @@ function appResize() {
                 <span class="material-symbols-outlined text-lg hover:bg-red-600" @click="$emit('appClose')">close</span>
             </div>
         </div>
-        <main class="overflow-auto w-full h-full mb-12">
+        <main class="overflow-auto mt-8 w-full h-[calc(100%-3rem)]">
             <RouterView />
         </main>
-        <div class="bg-[#00000010] absolute h-4 w-full bottom-0 flex">
+        <div class="bg-[#00000010] h-4 w-full bottom-0 flex">
             <span id="appResizeButton" @mousedown="appResize" class="material-symbols-outlined text-base cursor-nwse-resize -rotate-45 ml-auto">filter_list</span>
         </div>
     </div>
