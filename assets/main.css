@@ -14,6 +14,29 @@
         padding: 0;
         user-select: none;
     }
+    
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+    
+    ::-webkit-scrollbar-track {
+        background: #FFF;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        ::-webkit-scrollbar-track {
+            background: #163030;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+    }
 }
 
 @layer components {
