@@ -89,7 +89,7 @@ function appOpen(appName) {
   <div class="w-full gap-x-1" id="desktop" @mousedown.self="drawSelection()">
     <Welcome class="absolute left-[80%] top-[25%] -translate-x-1/2 -translate-y-1/2 z-10" />
     <AppWindow v-if="AppOpened" @appClose="AppOpened = ''" id="appWindow"/>
-    <div class="app row-start-1 col-start-1 hover:app-selected" id="bio" @click="appSelect" @dblclick="appOpen('projects')">
+    <div tabindex="0" class="app row-start-1 col-start-1 hover:app-selected" id="projects" @click="appSelect" @dblclick="appOpen('projects')">
       <img src="/assets/icons/notepad.svg" alt="notepad">
       <span>Projects</span>
     </div>
