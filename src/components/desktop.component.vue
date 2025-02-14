@@ -2,10 +2,10 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { usePointer } from '@vueuse/core'
-const { x, y } = usePointer()
 import Welcome from './welcome.component.vue'
 import AppWindow from './appWindow.component.vue'
 
+const { x, y } = usePointer();
 const router = useRouter();
 const AppOpened = ref('');
 
